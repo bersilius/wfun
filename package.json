@@ -1,0 +1,34 @@
+{
+  "name": "wfun",
+  "version": "0.12.0",
+  "description": "Wrap your plain JS functions into different functions based on common patterns",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint lib/**.js",
+    "test": "cross-env NODE_ENV=test mocha --recursive 'lib/**/*.spec.js'",
+    "test:watch": "npm test -- --watch",
+    "coverage": "NODE_ENV=test istanbul cover _mocha -- --require co-mocha --timeout 10000 'lib/**/*.spec.js'"
+  },
+  "keywords": [
+    "wrapper",
+    "function",
+    "pattern"
+  ],
+  "author": "Adam Bereczk",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co-mocha": "^1.2.0",
+    "coveralls": "^2.11.15",
+    "cross-env": "^2.x.x",
+    "eslint": "^4.10.0",
+    "istanbul": "1.0.0-alpha.2",
+    "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.2.0",
+    "pre-push": "^0.1.1",
+    "starwars-names": "^1.6.0"
+  }
+}
