@@ -4,29 +4,29 @@ Wrap your plain JS functions into different functions, based on common patterns 
 
 The concept is that you want to write the business logic one way, but reuse it in multiple environment.
 
-Note: This package is a part of a larger project. It is about how to run plain JS functions as a deployable container.
-Anyway you may not find this package useful on its own or you may have to include it in your own plugin or middleware logic.
+## Installation
 
-Please check also the following packages that contains this package:
+Run the install command:
 
-[pfun]()
-[cfun]()
+    npm install --save wfun
 
 ## About
 It is common when you want to handle messages in a network environment, you will receive an object that contains request/input data and another object that contains response callback function (even if it is a property like ```res.send(...)``` or a ```msg.payload```).
 But there are tons of code (really cool packages) not designed to receive its expected argument that way.
-We have to wrap them into functions to map the request object properties and/or a callback to arguments and then call the actual business logic.
+We have to wrap them into functions and map the request object properties and/or a callback to arguments and then call the actual business logic.
 
-Examples:
+## Usage examples
 
-Request:
-```
+#### Wrap 'endsWith' function from Lodash package
+
+Incoming request object:
+```javascript
 {
     payload: { string: 'someString', target: 'S', position: '5' }
+    // ... pattern, additional toolkit related properties, etc.
 }
 ```
 
-Wrap 'endsWith' function from Lodash package
 ```javascript
 const wfun = require('wfun')
 
@@ -37,22 +37,14 @@ const wrappedFunction = wfun(endsWith, {
     map: [ 'string', 'target', 'position' ]
 })
 
-// (msg, cb) => cb(null, _.endsWith(msg.payload.string, msg.payload.target, msg.payload.position))
-
+// wrappedFunction --> (msg, cb) => cb(null, _.endsWith(msg.payload.string, msg.payload.target, msg.payload.position))
 ```
 
-## Installation
+## Notes
 
-Run the install command:
+Although this library can be used alone, it is one of the artifacts of a proof-of-concept project, which is focusing to seperate the business logic implementation from the infrastructure logic to keep it as independent/adaptive/pure as possible.
 
-    npm install wfun
+If you are interested please also check the repositories listed below which can be used together to achieve the greater goal:
 
-## Usage
-
-```javascript
-const wfun = require('wfun')
-
-const businessLogic = require('')
-
-const wrappedBusinessLogic = wfun()
-```
+- [pfun](https://github.com/bersilius/pfun) - A tool to create plugins or middlewares for different Javascript tools, frameworks, servers.
+- [npac](https://github.com/tombenke/npac) - A lightweight Ports and Adapters Container for applications running on Node.js platform.
