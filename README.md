@@ -1,5 +1,9 @@
 # wfun
 
+[![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+[![Coveralls][BadgeCoveralls]][Coveralls]
+
 Wrap your plain JS functions into different functions, based on common patterns for plugins and middlewares.
 
 The concept is that you want to write the business logic one way, but reuse it in multiple environment.
@@ -46,5 +50,12 @@ Although this library can be used alone, it is one of the artifacts of a proof-o
 
 If you are interested please also check the repositories listed below which can be used together to achieve the greater goal:
 
-- [pfun](https://github.com/bersilius/pfun) - A tool to create plugins or middlewares for different Javascript tools, frameworks, servers.
+- [pluginizer](https://github.com/bersilius/pluginizer) - A tool to create plugins or middlewares for different Javascript tools, frameworks, servers.
 - [npac](https://github.com/tombenke/npac) - A lightweight Ports and Adapters Container for applications running on Node.js platform.
+
+[npm-badge]: https://badge.fury.io/js/wfun.svg
+[npm-url]: https://badge.fury.io/js/wfun
+[travis-badge]: https://api.travis-ci.org/bersilius/wfun.svg
+[travis-url]: https://travis-ci.org/bersilius/wfun
+[Coveralls]: https://coveralls.io/github/bersilius/wfun?branch=master
+[BadgeCoveralls]: https://coveralls.io/repos/github/bersilius/wfun/badge.svg?branch=master

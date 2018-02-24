@@ -7,14 +7,18 @@
     "lint": "eslint lib/**.js",
     "test": "cross-env NODE_ENV=test mocha --recursive 'lib/**/*.spec.js'",
     "test:watch": "npm test -- --watch",
-    "coverage": "NODE_ENV=test istanbul cover _mocha -- --require co-mocha --timeout 10000 'lib/**/*.spec.js'"
+    "coverage": "NODE_ENV=test istanbul cover _mocha -- --require co-mocha --timeout 10000 'lib/**/*.spec.js'",
+    "coveralls": "NODE_ENV=test istanbul cover _mocha --report lcovonly -- recursive --timeout 15000 'lib/**/*.spec.js' -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "keywords": [
     "wrapper",
     "function",
     "pattern"
   ],
-  "author": "Adam Bereczk",
+  "author": {
+    "name": "Adam Bereczk",
+    "email": "adam.bereczk@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4"
@@ -30,5 +34,19 @@
     "mocha-lcov-reporter": "^1.2.0",
     "pre-push": "^0.1.1",
     "starwars-names": "^1.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/bersilius/wfun/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/bersilius/wfun/blob/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bersilius/wfun.git"
+  },
+  "engines": {
+    "node": "8.9.4"
   }
 }
