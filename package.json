@@ -1,6 +1,6 @@
 {
   "name": "wfun",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "Wrap your plain JS functions into different functions based on common patterns",
   "main": "lib/index.js",
   "scripts": {
@@ -19,28 +19,27 @@
     "name": "Adam Bereczk",
     "email": "adam.bereczk@gmail.com"
   },
-  "license": "MIT",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/bersilius/wfun/blob/master/LICENSE"
+  },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "co-mocha": "^1.2.0",
-    "coveralls": "^2.11.15",
-    "cross-env": "^2.x.x",
-    "eslint": "^4.10.0",
+    "chai": "^4.1.2",
+    "co-mocha": "^1.2.2",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
     "istanbul": "1.0.0-alpha.2",
-    "mocha": "^4.0.1",
-    "mocha-lcov-reporter": "^1.2.0",
+    "mocha": "^5.1.1",
+    "mocha-lcov-reporter": "^1.3.0",
     "pre-push": "^0.1.1",
     "starwars-names": "^1.6.0"
   },
   "bugs": {
     "url": "https://github.com/bersilius/wfun/issues"
-  },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/bersilius/wfun/blob/master/LICENSE"
   },
   "repository": {
     "type": "git",
